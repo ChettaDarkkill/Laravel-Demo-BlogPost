@@ -20,12 +20,14 @@ class HomeController extends BaseController {
     	return View::make('Register/register');
     }
 	public function showWelcome()
-	{
-		return View::make('home');
+	{   
+		$results = Article::all();
+		return View::make('home')->with('results',$results);
 	}
     public function showSecret()
     {   
          $results = Article::all();
+      //   return View::make('secret')->with('results', $results);
          return View::make('secret')->with('results', $results);
     }
 }
