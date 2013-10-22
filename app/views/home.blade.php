@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-<h2>บทความทั้งหมด</h2>
+<h2>บทความทั้งหมดของระบบ</h2>
 <?php foreach($results as $result):?>
 <div class="row">
   <div class="col-sm-6 col-md-3">
