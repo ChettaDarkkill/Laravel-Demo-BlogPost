@@ -14,7 +14,12 @@ class HomeController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
-
+    public function showArticle()
+    {    
+    	 $title = Input::get('lbl');
+         $results = DB::table('article')->where('title',$title)->get();
+         return View::make('showarticle')->with('results',$results);
+    } 
     public function showRegister()
     {
     	return View::make('Register/register');
@@ -26,8 +31,7 @@ class HomeController extends BaseController {
 	}
     public function showSecret()
     {   
-         $results = Article::all();
-      //   return View::make('secret')->with('results', $results);
-         return View::make('secret')->with('results', $results);
+          $results = DB::table('article')->get();
+          return View::make('secret')->with('results', $results);
     }
 }

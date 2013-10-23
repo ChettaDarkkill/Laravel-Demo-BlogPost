@@ -6,18 +6,25 @@
 @stop
 
 @section('content')
-<h2>บทความทั้งหมดของระบบ</h2>
+<h2>บทความทั้งหมด</h2>
 <?php foreach($results as $result):?>
 <div class="row">
   <div class="col-sm-6 col-md-3">
     <div class="thumbnail">
       <div class="caption">
-        <h3>{{$result->title}} </h3>
-        <p> {{$result->about}} </p>
-        <p><a href="#" class="btn btn-primary">อ่านบทความนี้</a> <a href="#" class="btn btn-default">แสดงความคิดเห็น</a></p>
+
+       
+         <!--{{ Form::open(array('url' => 'showarticle','class' => 'form-horizontal','method' => 'post')) }}-->
+         {{Form::open(array('url' => 'showarticle'))}}
+             <h3>{{Form::text('lbl',$result->title)}}</h3>
+             <p> {{$result->about}} </p>
+             {{ Form::submit('แสดงบทความ', array('class' => 'btn btn-primary')) }}{{ Form::submit('แสดงความคิดเห็น', array('class' => 'btn')) }}   
+         {{ Form::close() }}
+
       </div>
     </div>
   </div>
 </div>
 <?php endforeach;?>
 @stop
+

@@ -18,7 +18,7 @@ Route::get('logout', 'AuthController@getLogout');
 Route::get('register','HomeController@showRegister');
 Route::post('article','UserArticleController@addArticle');
 Route::get('register','UserArticleController@showProfile');
-
+Route::post('showarticle','HomeController@showArticle');
 Route::group(array('before' => 'auth'), function()
 {
     Route::get('secret', 'HomeController@showSecret');
