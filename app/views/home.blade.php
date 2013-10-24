@@ -16,7 +16,7 @@
        
          <!--{{ Form::open(array('url' => 'showarticle','class' => 'form-horizontal','method' => 'post')) }}-->
          {{Form::open(array('url' => 'showarticle'))}}
-             <h3>{{Form::text('lbl',$result->title)}}</h3>
+             <h3>{{Form::text('lbl',$result->title,array('type'=>'hidden'))}}</h3>
              <p> {{$result->about}} </p>
              {{ Form::submit('แสดงบทความ', array('class' => 'btn btn-primary')) }}{{ Form::submit('แสดงความคิดเห็น', array('class' => 'btn')) }}   
          {{ Form::close() }}

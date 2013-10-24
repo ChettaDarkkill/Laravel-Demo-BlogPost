@@ -6,7 +6,6 @@
 
 @section('content')
  <h1>Hello :User</h1>
-
  <p>welcome to easy post block</p>
   <p>
         <button class="btn btn-large btn-primary" type="button" id="flippppp">สร้างบทความใหม่</button>
@@ -37,10 +36,15 @@
       <br/>
             <strong>บทความทั้งหมดของคุณ</strong>
       <br/>
+      <!--แสดงบทความทั้งหมดเมื่อ log in เข้าใช้งานแล้ว-->
        <?php foreach($results as $result):?>
             <blockquote>
+                  {{ Form::open(array('url' => 'delarticle', 'class' => 'form-horizontal','method' => 'post')) }}
                   <p><a href="#">{{$result->title}} </a></p>
                   <small> {{$result->about}} <cite title="Source Title">ทดสอบ</cite></small>
+                  {{ Form::text('delarticle',$result->title)}}
+                  {{ Form::submit('ลบบทความนี้',array('class'=>'btn'))}}
+                  {{ Form::close() }}
             </blockquote>
        <?php endforeach;?>
 @stop

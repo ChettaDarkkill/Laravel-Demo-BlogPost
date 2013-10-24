@@ -19,7 +19,8 @@ Route::get('register','HomeController@showRegister');
 Route::post('article','UserArticleController@addArticle');
 Route::get('register','UserArticleController@showProfile');
 Route::post('showarticle','HomeController@showArticle');
+Route::post('delarticle' , 'HomeController@delArticle');
 Route::group(array('before' => 'auth'), function()
-{
+{   
     Route::get('secret', 'HomeController@showSecret');
 });

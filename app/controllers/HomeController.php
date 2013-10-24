@@ -14,6 +14,12 @@ class HomeController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
+	public function delArticle()
+	{   
+        $delarticle = Input::get('delarticle');
+        $delText = DB::table('article')->where('title','=',$delarticle)->delete();
+		return View::make('showComplete');
+	}
     public function showArticle()
     {    
     	 $title = Input::get('lbl');
