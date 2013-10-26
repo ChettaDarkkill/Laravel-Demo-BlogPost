@@ -14,6 +14,14 @@ class HomeController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
+	public function showUser()
+	{
+		return View::make('ShowUser/showuser');
+	}
+	public function showError()
+	{
+ 	  return View::make('showError');
+	}
 	public function delArticle()
 	{   
         $delarticle = Input::get('delarticle');
@@ -32,12 +40,15 @@ class HomeController extends BaseController {
     }
 	public function showWelcome()
 	{   
-		$results = Article::all();
+		$results = DB::table('article')->orderBy('id','desc')->get();
 		return View::make('home')->with('results',$results);
 	}
     public function showSecret()
-    {   
-          $results = DB::table('article')->get();
-          return View::make('secret')->with('results', $results);
+    {      
+    	  $rows = Article::all()->count();
+    	  $results = DB::table('article')->orderBy('id', 'desc')->get();
+          return View::make('secret')->with('results', $results); 
+    	  //var_dump($results);
+          //$results = DB::table('article')->get();       
     }
 }

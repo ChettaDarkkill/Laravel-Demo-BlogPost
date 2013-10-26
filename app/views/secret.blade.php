@@ -42,9 +42,10 @@
                   {{ Form::open(array('url' => 'delarticle', 'class' => 'form-horizontal','method' => 'post')) }}
                   <p><a href="#">{{$result->title}} </a></p>
                   <small> {{$result->about}} <cite title="Source Title">ทดสอบ</cite></small>
-                  {{ Form::text('delarticle',$result->title)}}
+                  {{ Form::hidden('delarticle',$result->title)}}
                   {{ Form::submit('ลบบทความนี้',array('class'=>'btn'))}}
                   {{ Form::close() }}
             </blockquote>
        <?php endforeach;?>
+       
 @stop

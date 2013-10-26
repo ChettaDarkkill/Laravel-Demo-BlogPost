@@ -20,6 +20,11 @@ Route::post('article','UserArticleController@addArticle');
 Route::get('register','UserArticleController@showProfile');
 Route::post('showarticle','HomeController@showArticle');
 Route::post('delarticle' , 'HomeController@delArticle');
+Route::get('test1','HomeController@showError');
+Route::get('test2','HomeController@showError');
+Route::get('test3','HomeController@showError');
+Route::get('test4','HomeController@showError');
+Route::get('profile','HomeController@showUser');
 Route::group(array('before' => 'auth'), function()
 {   
     Route::get('secret', 'HomeController@showSecret');

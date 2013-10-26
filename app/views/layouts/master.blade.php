@@ -38,12 +38,12 @@
                     <!-- Everything you want hidden at 940px or less, place within here -->
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li><a href="{{{ URL::to('') }}}">หน้าหลัก</a></li>
-                            <li><a href="{{{ URL::to('secret') }}}">การจัดการบล๊อก</a></li>
+                            <li><a href="{{{ URL::to('') }}}"><i class="icon-home icon-white"></i>หน้าหลัก </a></li>
+                            <li><a href="{{{ URL::to('secret') }}}"><i class="icon-edit icon-white"></i>การจัดการบล๊อก</a></li>
                              @if(Auth::guest())
-                             <li><a href="{{{ URL::to('register') }}}">สมัครสมาชิก</a></li>
+                             <li><a href="{{{ URL::to('register') }}}"><i class="icon-user icon-white"></i>สมัครสมาชิก</a></li>
                              @else
-                             <li><a href="{{{ URL::to('profile') }}}">ข้อมูลส่วนตัว</a></li>
+                             <li><a href="{{{ URL::to('profile') }}}"><i class="icon-user icon-white"></i>ข้อมูลส่วนตัว</a></li>
                              @endif
                         </ul> 
                     </div>
@@ -77,12 +77,13 @@
                 @if(Auth::guest()) 
                 @else
                   <div class="span2">
-                        <p class="muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
-                        <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
-                        <p class="text-error">Donec ullamcorper nulla non metus auctor fringilla.</p>
-                        <p class="text-info">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.</p>
-                        <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>      
-                  </div>
+                       <ul class="nav nav-list">
+                          <li><a href="{{{ URL::to('test1') }}}"><i class="icon-home"></i> Home</a></li>
+                          <li><a href="{{{ URL::to('test2') }}}"><i class="icon-book"></i> Library</a></li>
+                          <li><a href="{{{ URL::to('test3') }}}"><i class="icon-pencil"></i> Applications</a></li>
+                          <li><a href="{{{ URL::to('test4') }}}"></i> Misc</a></li>
+                       </ul>
+                   </div>
                 @endif
                 <div class="span10">
                   <!--Body content-->

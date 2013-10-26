@@ -16,11 +16,18 @@
        
          <!--{{ Form::open(array('url' => 'showarticle','class' => 'form-horizontal','method' => 'post')) }}-->
          {{Form::open(array('url' => 'showarticle'))}}
-             <h3>{{Form::text('lbl',$result->title,array('type'=>'hidden'))}}</h3>
-             <p> {{$result->about}} </p>
-             {{ Form::submit('แสดงบทความ', array('class' => 'btn btn-primary')) }}{{ Form::submit('แสดงความคิดเห็น', array('class' => 'btn')) }}   
-         {{ Form::close() }}
-
+             <blockquote>
+              <p>{{$result->title}}</p>
+              <small>บทความนี้เกี่ยวกับ <cite title="Source Title">{{$result->about}}</cite></small>
+             </blockquote>
+             {{Form::hidden('lbl',$result->title,array('type'=>'hidden'))}}
+             {{ Form::submit('อ่านบทความนี้', array('class' => 'btn btn-primary')) }}
+            {{ Form::close() }}
+             @if(Auth::guest())
+                 {{ Form::submit('แสดงความคิดเห็น', array('class' => 'btn')) }} 
+             @else
+                 {{ Form::submit('ดูความคิดเห็นทั้งหมดของบทความนี้', array('class' => 'btn')) }}   
+             @endif
       </div>
     </div>
   </div>
