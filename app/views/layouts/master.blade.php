@@ -78,14 +78,15 @@
                 @else
                   <div class="span2">
                        <ul class="nav nav-list">
-                          <li><a href="{{{ URL::to('test1') }}}"><i class="icon-home"></i> Home</a></li>
-                          <li><a href="{{{ URL::to('test2') }}}"><i class="icon-book"></i> Library</a></li>
-                          <li><a href="{{{ URL::to('test3') }}}"><i class="icon-pencil"></i> Applications</a></li>
+                          <li><a href="{{{ URL::to('') }}}"><i class="icon-home"></i> หน้าหลัก</a></li>
+                          <li><a href="{{{ URL::to('editprofile') }}}"><i class="icon-book"></i>แก้ไขข้อมูลส่วนตัว</a></li>
+                          <li><a href="{{{ URL::to('test3') }}}"><i class="icon-pencil"></i>แต้มสะสมของคุณ</a></li>
                           <li><a href="{{{ URL::to('test4') }}}"></i> Misc</a></li>
                        </ul>
                    </div>
                 @endif
                 <div class="span10">
+
                   <!--Body content-->
                   @yield('content')
                 </div>
@@ -95,10 +96,13 @@
         </div>
 
         <!-- Scripts are placed here -->
-        
+        {{ HTML::script('http://code.jquery.com/jquery.js')}}
+        {{ HTML::script('js/bootstrap.min.js')}}
         {{ HTML::script('js/bootstrap-dropdown.js') }}
         {{ HTML::script('js/jquery-1.9.1.js') }}
         {{ HTML::script('js/bootstrap/bootstrap.min.js') }}
+        {{ HTML::script('js/bootstrap-tooltip.js') }}
+       
 
     </body>
 </html>

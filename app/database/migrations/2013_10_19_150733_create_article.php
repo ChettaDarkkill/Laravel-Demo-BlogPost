@@ -13,7 +13,7 @@ class CreateArticle extends Migration {
 	{
 		Schema::create('article', function($table)
         {
-            $table->increments('id');
+            $table->increments('article_id');
             $table->string('title');
             $table->string('about');
             $table->string('details');

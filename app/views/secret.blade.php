@@ -18,6 +18,16 @@
                           <td width="20%">{{Form::label('หัวข้อบทความ')}}</td>
                           <td>{{Form::text('title')}}</td>
                       </tr>
+                       <tr> 
+                            <td width="20%">{{Form::label('หมวดหมู่')}}</td>
+                            <td>
+                            <select>
+                              <option>Programming / IT / Computer</option>
+                              <option>หนังสือ</option>
+                              <option>หางาน / สมัครงาน</option>
+                            </select>
+                          </td>
+                       </tr>
                       <tr>
                           <td width="20%">{{Form::label('เนื้อหาเกี่ยวกับ')}}</td>
                           <td>{{Form::text('about')}}</td>
