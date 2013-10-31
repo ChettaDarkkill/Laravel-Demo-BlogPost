@@ -16,7 +16,7 @@ class CreateArticle extends Migration {
             $table->increments('article_id');
             $table->string('title');
             $table->string('about');
-            $table->string('details');
+            $table->text('details');
         });
 	}
 

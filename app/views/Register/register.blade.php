@@ -13,15 +13,6 @@
 
 {{ Form::open(array('url' => 'register', 'class' => 'form-horizontal','method' => 'post')) }}
 
-    <!-- Name -->
-    <div class="control-group {{{ $errors->has('username') ? 'error' : '' }}}">
-        {{ Form::label('username', 'Username', array('class' => 'control-label')) }}
-
-        <div class="controls">
-            {{ Form::text('username', Input::old('username')) }}
-            {{ $errors->first('username') }}
-        </div>
-    </div>
      <!-- User Name -->
     <div class="control-group {{{ $errors->has('username') ? 'error' : '' }}}">
         {{ Form::label('username', 'Username', array('class' => 'control-label')) }}

@@ -3,7 +3,19 @@
 class AuthController extends BaseController {
 
 
-   
+    
+    public function test()
+    {}
+    public function addUser()
+    {   
+        $fullname = Input::get('username');
+        $password = Hash::make(Input::get('password'));
+        $email = Input::get('email');
+        $id = DB::table('users')->insertGetId(
+                array('id'=>$fullname ,'fullname' => $fullname ,'password' => $password ,'email'=> $email)
+        );
+        return View::make('showComplete');
+    }
     public function showLogin()
     {
         // Check if we already logged in

@@ -10,6 +10,8 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
+Route::post('register','AuthController@AddUser');
 Route::post('postcomment','HomeController@addComment');
 Route::get('/','HomeController@showWelcome');
 Route::get('login', 'AuthController@showLogin');
